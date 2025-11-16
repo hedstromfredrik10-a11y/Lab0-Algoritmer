@@ -104,7 +104,7 @@ class LinkedListTest {
 	// Enga tester------------------------------
 
 	@Test
-	public void testInsertFirstAndGetFirst() {	//Testa att lägga in element i första noden och hämta den
+	public void testInsertFirstAndGetFirst() { // Testa att lägga in element i första noden och hämta den
 		listUnderTest.insertFirst(10);
 		assertEquals(10, listUnderTest.getFirst());
 
@@ -113,7 +113,7 @@ class LinkedListTest {
 	}
 
 	@Test
-	public void testInsertLastAndGetLast() {	//Testa att lägga in i element i sista noden
+	public void testInsertLastAndGetLast() { // Testa att lägga in i element i sista noden
 		listUnderTest.insertLast(1);
 		listUnderTest.insertLast(2);
 		listUnderTest.insertLast(3);
@@ -122,7 +122,7 @@ class LinkedListTest {
 	}
 
 	@Test
-	public void testRemoveFirst() {	//Testa att ta bort elementet från första noden och hämta den
+	public void testRemoveFirst() { // Testa att ta bort elementet från första noden och hämta den
 		listUnderTest.insertLast(1);
 		listUnderTest.insertLast(2);
 		assertEquals(1, listUnderTest.removeFirst());
@@ -130,7 +130,7 @@ class LinkedListTest {
 	}
 
 	@Test
-	public void testRemoveLast() {	//Testa att ta bort sista elementet och hämta den
+	public void testRemoveLast() { // Testa att ta bort sista elementet och hämta den
 		listUnderTest.insertLast(10);
 		listUnderTest.insertLast(20);
 		listUnderTest.insertLast(30);
@@ -141,7 +141,7 @@ class LinkedListTest {
 	}
 
 	@Test
-	public void testNumberOfElements() {	//Testa att hämta antal element
+	public void testNumberOfElements() { // Testa att hämta antal element
 		assertEquals(0, listUnderTest.numberOfElements());
 		listUnderTest.insertLast(1);
 		listUnderTest.insertLast(2);
@@ -151,12 +151,29 @@ class LinkedListTest {
 	}
 
 	@Test
-	public void testClear() {	//Testa att rensa listan
+	public void testClear() { // Testa att rensa listan
 		listUnderTest.insertLast(10);
 		listUnderTest.insertLast(20);
 		listUnderTest.clear();
 		assertTrue(listUnderTest.isEmpty());
 		assertEquals(0, listUnderTest.numberOfElements());
+	}
+
+	@Test
+	public void testToStringRecursive() {
+		listUnderTest.insertLast(1);
+		listUnderTest.insertLast(2);
+		listUnderTest.insertLast(3);
+		assertEquals("[1, 2, 3]", listUnderTest.toStringRecursive());
+	}
+
+	@Test
+	public void testToStringReverseRecursive() {
+		listUnderTest.insertLast(1);
+		listUnderTest.insertLast(2);
+		listUnderTest.insertLast(3);
+		assertEquals("[3, 2, 1]", listUnderTest.toStringReverseRecursive());
+		System.out.println(listUnderTest.toStringReverseRecursive());
 	}
 
 }

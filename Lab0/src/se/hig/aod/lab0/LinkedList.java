@@ -1,6 +1,6 @@
 package se.hig.aod.lab0;
 
-public class LinkedList<T> implements List<T> {
+public class LinkedList<T> implements PrintableList<T> {
 
 	class ListNode<T> {
 		T data;
@@ -9,6 +9,15 @@ public class LinkedList<T> implements List<T> {
 		ListNode(T d) {
 			data = d;
 			next = null;
+		}
+
+		String toStringNodeRecursive() {
+			if (next == null) {
+				return data.toString();
+			}
+
+			return data.toString() + ", " + next.toStringNodeRecursive(); // Skriver ut första noden och sedan anropar
+																			// sig själv till listan är slut
 		}
 	}
 
@@ -118,4 +127,35 @@ public class LinkedList<T> implements List<T> {
 		return temp.data;
 	}
 
+	@Override
+	public String toStringRecursive() {
+		if (isEmpty()) {
+			return "[]";
+		}
+
+		return "[" + head.toStringNodeRecursive() + "]";
+	}
+
+	@Override
+	public String toStringReverseRecursive() {
+		if (isEmpty()) {
+			return "[]";
+		}
+
+		String s = toStringRecursive();
+		s = s.replaceAll(",", "").replace("[", "").replace("]", "");
+		StringBuilder builder = new StringBuilder();
+		String[] arr = s.toString().split("\\s+");
+
+		builder.append("[");
+		for (int i = (arr.length - 1); i >= 0; i--) {
+			builder.append(arr[i]);
+			if (i != 0) {
+				builder.append(", ");
+			}
+		}
+		builder.append("]");
+
+		return builder.toString();
+	}
 }
