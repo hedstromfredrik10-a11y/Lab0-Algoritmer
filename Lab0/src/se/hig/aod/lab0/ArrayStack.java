@@ -1,6 +1,6 @@
 package se.hig.aod.lab0;
 
-public class ArrayStack<T> implements Stack<T> {
+public abstract class ArrayStack<T> implements Stack<T> {
 
     private T[] elements;
     private int topIndex;
@@ -19,28 +19,28 @@ public class ArrayStack<T> implements Stack<T> {
         return (elements[0] == null);
     }
 
-    @Override
-    public boolean isFull() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isFull'");
-    }
+    // @Override
+    // public boolean isFull() {
+    //     // TODO Auto-generated method stub
+    //     throw new UnsupportedOperationException("Unimplemented method 'isFull'");
+    // }
 
-    @Override
-    public void push(Object element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'push'");
-    }
+    // @Override
+    // public void push(Object element) {
+    //     // TODO Auto-generated method stub
+    //     throw new UnsupportedOperationException("Unimplemented method 'push'");
+    // }
 
-    @Override
-    public Object pop() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pop'");
-    }
+    // @Override
+    // public Object pop() {
+    //     // TODO Auto-generated method stub
+    //     throw new UnsupportedOperationException("Unimplemented method 'pop'");
+    // }
 
-    @Override
-    public Object peek() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'peek'");
-    }
+    // @Override
+    // public Object peek() {
+    //     // TODO Auto-generated method stub
+    //     throw new UnsupportedOperationException("Unimplemented method 'peek'");
+    // }
 
 }
