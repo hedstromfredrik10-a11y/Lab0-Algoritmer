@@ -16,8 +16,15 @@ public class LinkedList<T> implements PrintableList<T> {
 				return data.toString();
 			}
 
-			return data.toString() + ", " + next.toStringNodeRecursive(); // Skriver ut första noden och sedan anropar
-																			// sig själv till listan är slut
+			return data.toString() + ", " + next.toStringNodeRecursive(); // Skriver ut första noden och sedan anropar														// sig själv till listan är slut
+		}
+
+		String toStringNodeReverseRecursive() {
+			if (next == null) {
+				return data.toString();
+			}
+
+			return next.toStringNodeReverseRecursive() + ", " + data.toString();
 		}
 	}
 
@@ -142,20 +149,7 @@ public class LinkedList<T> implements PrintableList<T> {
 			return "[]";
 		}
 
-		String s = toStringRecursive();
-		s = s.replaceAll(",", "").replace("[", "").replace("]", "");
-		StringBuilder builder = new StringBuilder();
-		String[] arr = s.toString().split("\\s+");
+		return "[" + head.toStringNodeReverseRecursive() + "]";
 
-		builder.append("[");
-		for (int i = (arr.length - 1); i >= 0; i--) {
-			builder.append(arr[i]);
-			if (i != 0) {
-				builder.append(", ");
-			}
-		}
-		builder.append("]");
-
-		return builder.toString();
 	}
 }
