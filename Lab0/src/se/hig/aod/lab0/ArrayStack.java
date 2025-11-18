@@ -1,6 +1,6 @@
 package se.hig.aod.lab0;
 
-public abstract class ArrayStack<T> implements Stack<T> {
+public class ArrayStack<T> implements Stack<T> {
 
     private T[] elements;
     private int topIndex;
