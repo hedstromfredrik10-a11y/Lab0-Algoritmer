@@ -16,7 +16,9 @@ public class LinkedList<T> implements PrintableList<T> {
 				return data.toString();
 			}
 
-			return data.toString() + ", " + next.toStringNodeRecursive(); // Skriver ut första noden och sedan anropar														// sig själv till listan är slut
+			return data.toString() + ", " + next.toStringNodeRecursive(); // Skriver ut första noden och sedan anropar
+																			// sig själv för att skriva ut resten efter
+
 		}
 
 		String toStringNodeReverseRecursive() {
@@ -24,7 +26,9 @@ public class LinkedList<T> implements PrintableList<T> {
 				return data.toString();
 			}
 
-			return next.toStringNodeReverseRecursive() + ", " + data.toString();
+			return next.toStringNodeReverseRecursive() + ", " + data.toString(); // Skriver ut första noden och sedan
+																					// anropar sig själv för att skriva
+																					// ut resten före
 		}
 	}
 
@@ -139,7 +143,6 @@ public class LinkedList<T> implements PrintableList<T> {
 		if (isEmpty()) {
 			return "[]";
 		}
-
 		return "[" + head.toStringNodeRecursive() + "]";
 	}
 
@@ -148,8 +151,6 @@ public class LinkedList<T> implements PrintableList<T> {
 		if (isEmpty()) {
 			return "[]";
 		}
-
 		return "[" + head.toStringNodeReverseRecursive() + "]";
-
 	}
 }
