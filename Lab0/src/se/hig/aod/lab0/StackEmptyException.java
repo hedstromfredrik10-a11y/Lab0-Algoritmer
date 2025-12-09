@@ -4,5 +4,5 @@ class StackEmptyException extends RuntimeException {
     public StackEmptyException(String m) {
         super(m);
     }
-    
+
 }
