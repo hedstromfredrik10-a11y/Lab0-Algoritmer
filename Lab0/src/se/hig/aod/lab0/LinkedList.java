@@ -1,5 +1,14 @@
 package se.hig.aod.lab0;
 
+/**
+ * 
+ * A LinkedList class 
+ * 
+ * @author Anders Jackson
+ * @author Hanna Holmgren
+ * @author Fredrik Hedström
+ * @param <T> The data type that is to be stored in the list.
+ */
 public class LinkedList<T> implements PrintableList<T> {
 
 	class ListNode<T> {

@@ -20,7 +20,7 @@ public class ArrayStack<T> implements Stack<T> {
 
     @Override
     public boolean isEmpty() {
-        return topIndex == -1; // Kontrollerar om topIndex är -1 alltså om stacken är tom
+        return topIndex == -1; // Kontrollerar om topIndex är -1, alltså om stacken är tom
     }
 
     @Override
